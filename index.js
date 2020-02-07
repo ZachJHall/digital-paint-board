@@ -4,7 +4,10 @@ let ctx = digitalCanvas.getContext("2d");
 
 let mouseDown = null
 
-let paintColor = 'blue'
+let paintColor = 'null'
+
+clearCanvas()
+
 
 //Paint Colors
 
@@ -45,9 +48,13 @@ tinyBrushButton.onclick = function(){radius = 10};
 
 //Clear Canvas
 let clearCanvasButton = document.getElementById("clear-canvas-selector");
-clearCanvasButton.onclick = function(){digitalCanvas.width = digitalCanvas.width};
+clearCanvasButton.onclick = function() {clearCanvas()};
 
-
+function clearCanvas() {
+  paintColor = 'white'
+  ctx.fillStyle = paintColor;
+  ctx.fillRect(0,0,600,600)
+}
 
 
 function getMousePosition(digitalCanvas, event) {
