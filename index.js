@@ -88,3 +88,40 @@ digitalCanvas.addEventListener('mouseup', function(){
   mouseDown = false
   console.log(mouseDown)
 })
+
+// Mobile Touch
+
+digitalCanvas.addEventListener('touchstart', function(){
+   mouseDown = true
+   console.log(mouseDown)
+   mousePosition = getMousePosition(digitalCanvas, event)
+
+   // ctx.fillRect(mousePosition.x,mousePosition.y,10,10); square
+
+   ctx.beginPath();
+   ctx.arc(mousePosition.x, mousePosition.y, radius, 0, 2 * Math.PI);
+   ctx.fillStyle = paintColor;
+   ctx.fill();
+
+})
+
+
+digitalCanvas.addEventListener('touchmove', function(){
+  if (mouseDown === true) {
+    mousePosition = getMousePosition(digitalCanvas, event)
+
+    ctx.beginPath();
+    ctx.arc(mousePosition.x, mousePosition.y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = paintColor;
+    ctx.fill();
+
+
+  }
+
+})
+
+
+digitalCanvas.addEventListener('touchend', function(){
+  mouseDown = false
+  console.log(mouseDown)
+})
