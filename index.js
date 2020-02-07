@@ -125,3 +125,27 @@ digitalCanvas.addEventListener('touchend', function(){
   mouseDown = false
   console.log(mouseDown)
 })
+
+
+//Disable Scrolling on mobile when touching canvas
+
+
+digitalCanvas.addEventListener('touchstart', function (e) {
+  if (e.target == digitalcanvas) {
+    e.preventDefault();
+  }
+})
+
+
+digitalCanvas.addEventListener('touchmove', function(){
+  if (e.target == digitalcanvas) {
+    e.preventDefault();
+  }
+})
+
+
+digitalCanvas.addEventListener('touchend', function(){
+  if (e.target == digitalcanvas) {
+    e.preventDefault();
+  }
+})
