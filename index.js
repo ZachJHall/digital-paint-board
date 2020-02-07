@@ -43,6 +43,10 @@ smallBrushButton.onclick = function(){radius = 20};
 let tinyBrushButton = document.getElementById("tiny-brush-selector");
 tinyBrushButton.onclick = function(){radius = 10};
 
+//Clear Canvas
+let clearCanvasButton = document.getElementById("clear-canvas-selector");
+clearCanvasButton.onclick = function(){digitalCanvas.width = digitalCanvas.width};
+
 
 
 

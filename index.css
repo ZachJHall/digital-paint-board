@@ -16,9 +16,12 @@ margin-top: 8vh
 
 .brush-size-menu ul{
   list-style: none;
-
 }
 
 .brush-size-menu li{
   display: inline;
+}
+
+.clear-canvas-menu ul{
+  list-style: none;
 }
