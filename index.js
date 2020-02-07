@@ -2,9 +2,10 @@ let digitalCanvas = document.getElementById("paint-canvas");
 
 let ctx = digitalCanvas.getContext("2d");
 
+let mouseDown = null
 
+let paintColor = 'blue'
 
-let mouseDown = 2
 
 function getMousePosition(digitalCanvas, event) {
   let rect = digitalCanvas.getBoundingClientRect();
@@ -19,15 +20,26 @@ digitalCanvas.addEventListener('mousedown', function(){
    console.log(mouseDown)
    mousePosition = getMousePosition(digitalCanvas, event)
 
-   ctx.fillRect(mousePosition.x,mousePosition.y,10,10);
+   // ctx.fillRect(mousePosition.x,mousePosition.y,10,10); square
+
+   ctx.beginPath();
+   ctx.arc(mousePosition.x, mousePosition.y, 20, 0, 2 * Math.PI);
+   ctx.fillStyle = paintColor;
+   ctx.fill();
 
 })
 
+let radius = 70;
 digitalCanvas.addEventListener('mousemove', function(){
   if (mouseDown === true) {
     mousePosition = getMousePosition(digitalCanvas, event)
 
-    ctx.fillRect(mousePosition.x,mousePosition.y,10,10);
+    ctx.beginPath();
+    ctx.arc(mousePosition.x, mousePosition.y, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = paintColor;
+    ctx.fill();
+
+
   }
 
 })
