@@ -6,6 +6,28 @@ let mouseDown = null
 
 let paintColor = 'blue'
 
+//Paint Colors
+
+let blueButton = document.getElementById("blue-selector");
+blueButton.onclick = function(){paintColor='blue'};
+
+let greenButton = document.getElementById("green-selector");
+greenButton.onclick = function(){paintColor='green'};
+
+let redButton = document.getElementById("red-selector");
+redButton.onclick = function(){paintColor='red'};
+
+let yellowButton = document.getElementById("yellow-selector");
+yellowButton.onclick = function(){paintColor='yellow'};
+
+let blackButton = document.getElementById("black-selector");
+blackButton.onclick = function(){paintColor='black'};
+
+let eraserButton = document.getElementById("eraser-selector");
+eraserButton.onclick = function(){paintColor='white'};
+
+
+//
 
 function getMousePosition(digitalCanvas, event) {
   let rect = digitalCanvas.getBoundingClientRect();
@@ -29,7 +51,7 @@ digitalCanvas.addEventListener('mousedown', function(){
 
 })
 
-let radius = 70;
+
 digitalCanvas.addEventListener('mousemove', function(){
   if (mouseDown === true) {
     mousePosition = getMousePosition(digitalCanvas, event)
@@ -45,16 +67,7 @@ digitalCanvas.addEventListener('mousemove', function(){
 })
 
 
-
 digitalCanvas.addEventListener('mouseup', function(){
   mouseDown = false
   console.log(mouseDown)
 })
-
-function whileMouseDown() {
-
-  mousePosition = getMousePosition(digitalCanvas, event)
-
-  ctx.fillRect(mousePosition.x,mousePosition.y,10,10);
-
-}
