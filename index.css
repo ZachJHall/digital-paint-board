@@ -10,23 +10,20 @@ body {
 text-align: center;
 margin-top: 8vh
 }
-.color-menu ul{
-  list-style: none;
 
+.menu ul {
+  list-style: none;
 }
 
+.menu button {
+  background-color: yellow;
+  color: black;
+}
 .color-menu li{
   display: inline;
 }
 
-.brush-size-menu ul{
-  list-style: none;
-}
 
 .brush-size-menu li{
   display: inline;
-}
-
-.clear-canvas-menu ul{
-  list-style: none;
 }
