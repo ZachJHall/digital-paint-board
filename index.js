@@ -26,8 +26,25 @@ blackButton.onclick = function(){paintColor='black'};
 let eraserButton = document.getElementById("eraser-selector");
 eraserButton.onclick = function(){paintColor='white'};
 
-
 //
+
+//brush sizes
+let radius = 40;
+
+let largeBrushButton = document.getElementById("large-brush-selector");
+largeBrushButton.onclick = function(){radius = 60};
+
+let mediumBrushButton = document.getElementById("medium-brush-selector");
+mediumBrushButton.onclick = function(){radius = 40};
+
+let smallBrushButton = document.getElementById("small-brush-selector");
+smallBrushButton.onclick = function(){radius = 20};
+
+let tinyBrushButton = document.getElementById("tiny-brush-selector");
+tinyBrushButton.onclick = function(){radius = 10};
+
+
+
 
 function getMousePosition(digitalCanvas, event) {
   let rect = digitalCanvas.getBoundingClientRect();
@@ -45,7 +62,7 @@ digitalCanvas.addEventListener('mousedown', function(){
    // ctx.fillRect(mousePosition.x,mousePosition.y,10,10); square
 
    ctx.beginPath();
-   ctx.arc(mousePosition.x, mousePosition.y, 20, 0, 2 * Math.PI);
+   ctx.arc(mousePosition.x, mousePosition.y, radius, 0, 2 * Math.PI);
    ctx.fillStyle = paintColor;
    ctx.fill();
 
@@ -57,7 +74,7 @@ digitalCanvas.addEventListener('mousemove', function(){
     mousePosition = getMousePosition(digitalCanvas, event)
 
     ctx.beginPath();
-    ctx.arc(mousePosition.x, mousePosition.y, 20, 0, 2 * Math.PI);
+    ctx.arc(mousePosition.x, mousePosition.y, radius, 0, 2 * Math.PI);
     ctx.fillStyle = paintColor;
     ctx.fill();
 
